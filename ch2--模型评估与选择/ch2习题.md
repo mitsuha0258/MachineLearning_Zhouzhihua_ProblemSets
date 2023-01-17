@@ -21,7 +21,7 @@
 **答：**   
 
 先看看F1值的定义，   
-![1](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch2--%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/image/1.jpg)   
+![1](.//image/1.jpg)   
 $ F1 = (2 * P * R) / (P + R) $ ，其中 $ P = TP / (TP + FP) $ 即查准率（Precision），
 【预测为正例且真实为正例的数量】/【预测为正例的数量】，说白了关心预测为正样本时的准确率；
 $ R = TP / (TP + FN) $ 即查全率（又称召回率Recall），【预测为正例且真实为正例的数量】/【真实为正例的数量】。
@@ -35,7 +35,7 @@ F1值计算中对查准率和查全率都同等重视。
 而排在最后的是最不可能为正例的样本。从前往后，逐个将样本预测为正例（即把当前样本的输出值定于为阈值，小于阈值的都为反例），
 每次计算当前的查准率和查全率，即可得到查全率为横坐标查准率为纵坐标上的一个点，在将所有点按顺利连接后即可得到“P-R曲线”，
 而BEP（即Break-Event Point，平衡点）是在查全率=查准率时的取值。   
-![2](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch2--%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/image/2.jpg)   
+![2](.//image/2.jpg)   
 讨论：   
 
 从定义上看，F1值是在阈值固定时，将所有样本分类完成后，综合查全率和查准率得出的值；
@@ -59,7 +59,7 @@ ps.个人从直觉上BEP值和F1值是没有明确关系的，在讨论过程中
 #### 2.4 试述真正例率（TPR）、假正例率（FPR）与查准率（P）、查全率（R）之间的联系。
 **答：**   
 
-![3](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch2--%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/image/3.jpg)   
+![3](.//image/3.jpg)   
 查全率： $ R = TP / (TP + FN) $ 。【预测为正例且真实为正例的数量】/【真实为正例的数量】   
 查准率： $ P = TP / (TP + FP) $ 。【预测为正例且真实为正例的数量】/【预测为正例的数量】   
 真正例率（TPR）：同查全率   
@@ -73,7 +73,7 @@ ps.个人从直觉上BEP值和F1值是没有明确关系的，在讨论过程中
 
 显然，在ROC曲线中，一条横线对应一个（或多个）负样本 $ x_{i}^{-} $ ， 一条竖线对应一个（或多个）正样本 $ x_{j}^{+} $ ， 
 而一条斜线则对应多个正负样本 $ x^{+}\_{\ast},x^{-}\_{\ast} $ ，且 $ f(x^{+}\_{*}) = f(x^{-}\_{\ast}) $ ，即样本的预测值相同。如下图所示：   
-![4](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch2--%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/image/4.jpg)   
+![4](.//image/4.jpg)   
 其中 $ m_{i}^{+} $ 对应一个（或多个预测值相同的）正例，而 $ m_{j} $ 对应多个预测值相同的正负例 $ x^{+}\_{\ast},x^{-}\_{\ast} $ ，
 显然阴影部分的宽为 $ \frac{\sum_{x^{-}\in D^{-}} \parallel(f(x^{-}) = f(m_{j}))} {m^{-}} $ , $ m_{i}^{+} $
 的纵坐标为 $ \frac{\sum_{x_{+}\in D^{+}}\parallel(f(x^{+})>f(m_{j}))}{m^{+}} $ ，而 $ m_{j} $
@@ -103,7 +103,7 @@ ps.个人从直觉上BEP值和F1值是没有明确关系的，在讨论过程中
 **答：**   
 
 首先“任意一条ROC曲线都有一条代价曲线与之对应”，显然ROC曲线上每个点（FPR，TPR）都对应着下图中一条线段，取所有线段的下届，即可得到唯一的代价曲线。
-![5](https://github.com/han1057578619/MachineLearning_Zhouzhihua_ProblemSets/blob/master/ch2--%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/image/5.jpg)   
+![5](.//image/5.jpg)   
 反之，代价曲线实际上是一个多边形（在有限样本下），易理解，每条边都对应代价平面上一条线段，实际上从左向右遍历每一条边，即可得到ROC曲线上从左到右每一个点。
 
 ps. ROC曲线对应着唯一条代价曲线，但是一条代价曲线可对应着多条不同的ROC曲线，
